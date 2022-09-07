@@ -1,0 +1,23 @@
+<body>
+    <form onsubmit="return check()">
+        <input type="checkbox" name="fav" value="fruit">과일
+        <input type="checkbox" name="fav" value="coffee">커피
+        <input type="checkbox" name="fav" value="tea">녹차
+        <input type="checkbox" name="fav" value="icecream">아이스크림
+        <input type="submit" value="선택">
+    </form>
+    <script>
+        function check() {
+            const query = 'input[type="checkbox"]';
+            const checks = document.querySelectorAll(query);
+            check.forEach((i) => {console.log(`All: ${i.value} - ${i.checked}`)});
+            const query2 = 'input[type="checkbox"]:checked';
+            const trueChecked = docuemnt.querySelectorAll(query2);
+            trueChecked.forEach((i) => {console.log(`Checked: ${i.value} - ${i.checked}`)});
+            const query3 = 'input[name="Fav"]:checked'
+            const favChecked = document.querySelectorAll(query3);
+            favChecked.forEach((i) => console.log(`FAV Checked : ${i.value} - ${i.checked}`))
+            return false;
+        }
+    </script>
+</body>
